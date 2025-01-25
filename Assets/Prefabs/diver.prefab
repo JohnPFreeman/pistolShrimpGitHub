@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4068081900640941082}
   - component: {fileID: 7070005701999277319}
   - component: {fileID: 2745317112312690019}
+  - component: {fileID: 6094699971998650147}
   m_Layer: 0
   m_Name: diver
   m_TagString: Untagged
@@ -105,3 +106,16 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6094699971998650147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7976461428964871956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4d87b6e089bd8841874c121e9acf512, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1.84
