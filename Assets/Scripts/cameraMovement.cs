@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,14 +9,36 @@ public class cameraMovement : MonoBehaviour
     void Start()
     {
         transform.localEulerAngles = new Vector3(0.0f, 0.0f, 90.0f);
-        //self.transform.Rotate(0.0f, 0.0f, 90.0f, Space.Self);
+        transform.position = new Vector3(0.0f, 0.0f, 90.0f);
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKey(KeyCode.A))
+        {
+            transform.Rotate(-0.5f, 0.0f, 0.0f);
+
+        }
+
+        if (Input.GetKey(KeyCode.D))
+        {
+            transform.Rotate(0.5f, 0.0f, 0.0f);
+
+        }
+
+        if (Input.GetKey(KeyCode.W) && transform.localEulerAngles.z > 60)
+        {
+            transform.Rotate(0.0f, 0.0f, -0.25f);
+
+        }
+
+        if (Input.GetKey(KeyCode.S) && transform.localEulerAngles.z < 90)
+        {
+            transform.Rotate(0.0f, 0.0f, 0.25f);
+
+        }
 
     }
 }
