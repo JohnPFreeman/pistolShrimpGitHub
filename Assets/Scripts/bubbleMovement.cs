@@ -13,8 +13,7 @@ public class bubbleMovement : MonoBehaviour
         //transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y, transform.localEulerAngles.z); ;
         transform.position += transform.up * 1;
 
-        bubble.velocity = transform.up * 50.0f;
-        //bubble.AddForce(new Vector3(0.0f, -15.0f, 0.0f));
+        bubble.velocity = transform.up * 100.0f;
         
 
     }
@@ -22,6 +21,7 @@ public class bubbleMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        //print(bubble.velocity.y);
+        bubble.AddForce(new Vector3(0.0f, -2.0f, 0.0f));
     }
 }

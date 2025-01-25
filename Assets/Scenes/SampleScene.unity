@@ -808,6 +808,7 @@ GameObject:
   - component: {fileID: 2036988650}
   - component: {fileID: 2036988649}
   - component: {fileID: 2036988654}
+  - component: {fileID: 2036988655}
   m_Layer: 0
   m_Name: shrimp
   m_TagString: Untagged
@@ -933,6 +934,24 @@ MonoBehaviour:
   firedTime: 0
   bubblePrefab: {fileID: 1720421712184006566, guid: 6d977243613b2744b96b06c02e139dbd, type: 3}
   bubbles: []
+--- !u!114 &2036988655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2036988648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1cf1a0fc2abb31419afd3c5dc83f3f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnedTime: 0
+  spawnRate: 0
+  theta: 0
+  r: 0
+  diverPrefab: {fileID: 7976461428964871956, guid: ccc2154d43289414484e950bff916999, type: 3}
+  divers: []
 --- !u!1 &2146088441
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,4 +1,5 @@
 using JetBrains.Annotations;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,6 +31,7 @@ public class bubbleFire : MonoBehaviour
             fired = true;
             firedTime = Time.time;
             bubbles.Add(Instantiate(bubblePrefab, transform.position, transform.rotation));
+            //print(Math.Sin(Math.PI));
             //print(bubblePrefab.transform.localScale.y / 2);
 
         }
@@ -43,8 +45,11 @@ public class bubbleFire : MonoBehaviour
 
         for (int i = 0; i < bubbles.Count; i++)
         {
+            //print(bubbles[i].transform.position.y);
+            //print(bubbles[i].transform.localScale.y / 2 + 0.1f);
             if (bubbles[i].transform.position.y <= bubbles[i].transform.localScale.y / 2 + 0.1f)
             {
+                print("pop");
                 Destroy(bubbles[i]);
 
             }
