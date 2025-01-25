@@ -1,31 +1,53 @@
 using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class bubbleFire : MonoBehaviour
 {
-    public Transform startPos;
+    //public Transform startPos;
     public bool fired;
+    public float firedTime;
+    public GameObject bubblePrefab;
+    public List<GameObject> bubbles;
+
     // Start is called before the first frame update
     void Start()
     {
         fired = false;
 
-        transform.position = new Vector3(-1.0f, startPos.transform.position.y, startPos.transform.position.z);
-        transform.localEulerAngles = new Vector3(startPos.localEulerAngles.x, startPos.localEulerAngles.y, startPos.localEulerAngles.z - 90.0f);
+        //transform.position = new Vector3(-1.0f, startPos.transform.position.y, startPos.transform.position.z);
+        //transform.localEulerAngles = new Vector3(startPos.localEulerAngles.x, startPos.localEulerAngles.y, startPos.localEulerAngles.z - 90.0f);
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!fired)
+        if (!fired && Input.GetMouseButton(0))
         {
-            transform.localEulerAngles = new Vector3(startPos.localEulerAngles.x, startPos.localEulerAngles.y, startPos.localEulerAngles.z - 90.0f);
-            transform.position = new Vector3(startPos.transform.position.x, startPos.transform.position.y, startPos.transform.position.z);
-            transform.position += -transform.right;
+            fired = true;
+            firedTime = Time.time;
+            bubbles.Add(Instantiate(bubblePrefab, transform.position, transform.rotation));
+            //print(bubblePrefab.transform.localScale.y / 2);
+
         }
-        
+
+        if (Time.time > firedTime + 0.5f)
+        {
+            fired = false;
+        }
+
+        bubbles = bubbles.Where(bubble => bubble != null).ToList();
+
+        for (int i = 0; i < bubbles.Count; i++)
+        {
+            if (bubbles[i].transform.position.y <= bubbles[i].transform.localScale.y / 2 + 0.1f)
+            {
+                Destroy(bubbles[i]);
+
+            }
+        }
     }
 }
