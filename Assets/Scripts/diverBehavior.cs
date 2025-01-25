@@ -12,6 +12,15 @@ public class diverBehavior : MonoBehaviour
         
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "bubble")
+        {
+            Destroy(other);
+        }
+
+    }
+
     // Update is called once per frame
     void Update()
     {
