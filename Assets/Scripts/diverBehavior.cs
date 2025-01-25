@@ -14,9 +14,11 @@ public class diverBehavior : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "bubble")
+        print("object has entered");
+        if (other.gameObject.CompareTag("bubble"))
         {
-            Destroy(other);
+            print("bubble found"); 
+            Destroy(gameObject);
         }
 
     }
