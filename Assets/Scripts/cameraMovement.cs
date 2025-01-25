@@ -9,7 +9,7 @@ public class cameraMovement : MonoBehaviour
     void Start()
     {
         transform.localEulerAngles = new Vector3(0.0f, 0.0f, 90.0f);
-        transform.position = new Vector3(0.0f, 0.0f, 90.0f);
+        transform.position = new Vector3(0.0f, 1.0f, 0.0f);
 
     }
 
@@ -18,13 +18,13 @@ public class cameraMovement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.A))
         {
-            transform.Rotate(-0.5f, 0.0f, 0.0f);
+            transform.localEulerAngles += new Vector3(0.0f, -0.5f, 0.0f);
 
         }
 
         if (Input.GetKey(KeyCode.D))
         {
-            transform.Rotate(0.5f, 0.0f, 0.0f);
+            transform.localEulerAngles += new Vector3(0.0f, 0.5f, 0.0f);
 
         }
 
