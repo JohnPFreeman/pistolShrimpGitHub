@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class waveBehavior : MonoBehaviour
 {
@@ -40,5 +41,6 @@ public class waveBehavior : MonoBehaviour
             //print(spawnRate);
             divers.Add(Instantiate(diverPrefab, new Vector3(r*MathF.Cos(theta), 0.6553028f, r * MathF.Sin(theta)), new Quaternion(0, 0, 0, 0)));
         }
+
     }
 }
