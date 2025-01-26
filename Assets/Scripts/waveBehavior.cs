@@ -15,7 +15,7 @@ public class waveBehavior : MonoBehaviour
     void Start()
     {
         spawnedTime = 0.0f;
-        spawnRate = 5.0f;
+        spawnRate = 8.0f;
 
 
     }
@@ -28,6 +28,12 @@ public class waveBehavior : MonoBehaviour
             spawnedTime = Time.time;
             theta = UnityEngine.Random.Range(0, 2*Mathf.PI);
             r = UnityEngine.Random.Range(50, 100);
+            if (spawnRate > 0.1f)
+            {
+                spawnRate *= 0.975f;
+            }
+            
+            print(spawnRate);
             divers.Add(Instantiate(diverPrefab, new Vector3(r*MathF.Cos(theta), 2, r * MathF.Sin(theta)), new Quaternion(0, 0, 0, 0)));
         }
     }
