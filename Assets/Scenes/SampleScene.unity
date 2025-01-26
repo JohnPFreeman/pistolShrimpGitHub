@@ -960,32 +960,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1793011264}
   m_CullTransparentMesh: 1
---- !u!1 &1897512522 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 53b407241723c194899d82f56af304a8, type: 3}
-  m_PrefabInstance: {fileID: 1298783091}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1897512523
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1897512522}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 660a5b02d23dd894a8350527015aadb9, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1942949483
 GameObject:
   m_ObjectHideFlags: 0
@@ -1384,4 +1358,3 @@ SceneRoots:
   - {fileID: 60644346}
   - {fileID: 1605344503}
   - {fileID: 169146969}
-  - {fileID: 1298783091}
