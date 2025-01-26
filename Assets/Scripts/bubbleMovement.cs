@@ -5,7 +5,12 @@ using UnityEngine;
 public class bubbleMovement : MonoBehaviour
 {
     Rigidbody bubble;
-    
+
+    [SerializeField] private AudioClip move1;
+    [SerializeField] private AudioClip move2;
+    [SerializeField] private AudioClip move3;
+    private AudioSource audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,7 +19,24 @@ public class bubbleMovement : MonoBehaviour
         transform.position += transform.up * 1;
 
         bubble.velocity = transform.up * 100.0f;
+
+        audioSource = GetComponent<AudioSource>();
+        audioSource.pitch = UnityEngine.Random.Range(0.8f, 1.2f);
+        int rand = UnityEngine.Random.Range(0, 3);
+        if (rand == 0)
+        {
+            audioSource.clip = move1;
+        } else if (rand == 1)
+        {
+            audioSource.clip = move2;
+        } else {
+            audioSource.clip = move3;
+        }
+
+        audioSource.Play();
         
+
+
 
     }
 
