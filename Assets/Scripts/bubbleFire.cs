@@ -15,12 +15,19 @@ public class bubbleFire : MonoBehaviour
     public GameObject RightClawClosed;
     public List<GameObject> bubbles;
 
+    [SerializeField] private AudioClip clawSnap;
+    [SerializeField] private AudioClip firstPop;
+    private AudioSource audioSource;
+
+
     // Start is called before the first frame update
     void Start()
     {
         fired = false;
         RightClawClosed.SetActive(false);
         RightClawOpen.SetActive(true);
+
+        audioSource = GetComponent<AudioSource>();
 
         //transform.position = new Vector3(-1.0f, startPos.transform.position.y, startPos.transform.position.z);
         //transform.localEulerAngles = new Vector3(startPos.localEulerAngles.x, startPos.localEulerAngles.y, startPos.localEulerAngles.z - 90.0f);
@@ -37,6 +44,9 @@ public class bubbleFire : MonoBehaviour
 
             firedTime = Time.time;
             bubbles.Add(Instantiate(bubblePrefab, transform.position, transform.rotation));
+            audioSource.pitch = UnityEngine.Random.Range(0.8f, 1.2f);
+            audioSource.PlayOneShot(clawSnap);
+            audioSource.PlayOneShot(firstPop);
 
             //print(Math.Sin(Math.PI));
             //print(bubblePrefab.transform.localScale.y / 2);

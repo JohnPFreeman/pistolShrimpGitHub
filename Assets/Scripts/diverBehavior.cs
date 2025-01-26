@@ -12,11 +12,17 @@ public class diverBehavior : MonoBehaviour
     Animator animator;
     killCounter killCounterScript;
 
+    [SerializeField] private AudioClip death1;
+    [SerializeField] private AudioClip death2;
+    [SerializeField] private AudioClip death3;
+    private AudioSource audioSource;
+
     void Start()
     {
         animator = GetComponentInChildren<Animator>();
         killCounterScript = GameObject.Find("KCO").GetComponent<killCounter>();
         hit = false;
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -37,7 +43,28 @@ public class diverBehavior : MonoBehaviour
         animator.SetTrigger("Hit");
         animator.SetBool("Hit", true);
         hit = true;
-        yield return new WaitForSeconds(3.0f);
+        audioSource.pitch = UnityEngine.Random.Range(0.6f, 1.4f);
+        int rand = UnityEngine.Random.Range(0, 3);
+        if (rand == 0)
+        {
+            //audioSource.clip = death1;
+            AudioSource.PlayClipAtPoint(death1, transform.position, 0.4f);
+        }
+        else if (rand == 1)
+        {
+            //audioSource.clip = death2;
+            AudioSource.PlayClipAtPoint(death2, transform.position, 0.4f);
+        }
+        else
+        {
+            //audioSource.clip = death3;
+            AudioSource.PlayClipAtPoint(death3, transform.position, 0.4f);
+        }
+
+        //audioSource.Play();
+
+        yield return new WaitForSeconds(5.0f);
+
         Destroy(gameObject);
 
     }
