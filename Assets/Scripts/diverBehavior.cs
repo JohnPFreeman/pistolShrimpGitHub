@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class diverBehavior : MonoBehaviour
@@ -33,7 +34,7 @@ public class diverBehavior : MonoBehaviour
         animator.SetTrigger("Hit");
         animator.SetBool("Hit", true);
         hit = true;
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(3.0f);
         Destroy(gameObject);
 
     }
@@ -51,5 +52,11 @@ public class diverBehavior : MonoBehaviour
         
         //transform.position = new Vector3(transform.position.x, 1.435203f, transform.position.z);
         transform.LookAt(new Vector3(0.0f, transform.position.y, 0.0f));
+
+        if (Vector3.Distance(transform.position, new Vector3(0.0f, 0.6553028f, 0.0f)) <= 0.5f)
+        {
+            //print("DIE");
+            SceneManager.LoadScene(2);
+        }
     }
 }
