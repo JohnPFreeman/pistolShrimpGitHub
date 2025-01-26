@@ -11,12 +11,16 @@ public class bubbleFire : MonoBehaviour
     public bool fired;
     public float firedTime;
     public GameObject bubblePrefab;
+    public GameObject RightClawOpen;
+    public GameObject RightClawClosed;
     public List<GameObject> bubbles;
 
     // Start is called before the first frame update
     void Start()
     {
         fired = false;
+        RightClawClosed.SetActive(false);
+        RightClawOpen.SetActive(true);
 
         //transform.position = new Vector3(-1.0f, startPos.transform.position.y, startPos.transform.position.z);
         //transform.localEulerAngles = new Vector3(startPos.localEulerAngles.x, startPos.localEulerAngles.y, startPos.localEulerAngles.z - 90.0f);
@@ -29,8 +33,12 @@ public class bubbleFire : MonoBehaviour
         if (!fired && Input.GetMouseButton(0))
         {
             fired = true;
+            // Change claw image
+            RightClawClosed.SetActive(true);
+            RightClawOpen.SetActive(false);
             firedTime = Time.time;
             bubbles.Add(Instantiate(bubblePrefab, transform.position, transform.rotation));
+
             //print(Math.Sin(Math.PI));
             //print(bubblePrefab.transform.localScale.y / 2);
 
@@ -39,6 +47,9 @@ public class bubbleFire : MonoBehaviour
         if (Time.time > firedTime + 0.5f)
         {
             fired = false;
+            // Change claw image
+            RightClawClosed.SetActive(false);
+            RightClawOpen.SetActive(true);
         }
 
         bubbles = bubbles.Where(bubble => bubble != null).ToList();
