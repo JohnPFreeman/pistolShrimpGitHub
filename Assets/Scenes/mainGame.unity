@@ -174,7 +174,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 90
+  orthographic size: 80
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -1370,8 +1370,8 @@ MonoBehaviour:
   RightClawOpen: {fileID: 2086752361}
   RightClawClosed: {fileID: 1215176058}
   bubbles: []
-  clawSnap: {fileID: 8300000, guid: 519d13a00a56ccb46b00bdd2fc2f8fe3, type: 3}
-  firstPop: {fileID: 8300000, guid: 9ff82f30ad3091242b639d4a5189b3a6, type: 3}
+  clawSnap: {fileID: 0}
+  firstPop: {fileID: 0}
 --- !u!114 &2036988655
 MonoBehaviour:
   m_ObjectHideFlags: 0

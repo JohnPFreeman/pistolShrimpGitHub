@@ -8,10 +8,6 @@ public class killCounter : MonoBehaviour
 {
     public TextMeshProUGUI counterText;
     int kills;
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()

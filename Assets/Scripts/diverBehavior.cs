@@ -11,6 +11,7 @@ public class diverBehavior : MonoBehaviour
     public bool hit;
     Animator animator;
     killCounter killCounterScript;
+    public GameObject minimapIconDiver;
 
     [SerializeField] private AudioClip death1;
     [SerializeField] private AudioClip death2;
@@ -21,6 +22,7 @@ public class diverBehavior : MonoBehaviour
     {
         animator = GetComponentInChildren<Animator>();
         killCounterScript = GameObject.Find("KCO").GetComponent<killCounter>();
+        minimapIconDiver = GameObject.Find("MinimapIconDiver");
         hit = false;
         audioSource = GetComponent<AudioSource>();
     }
@@ -30,12 +32,17 @@ public class diverBehavior : MonoBehaviour
         //print("object has entered");
         if (other.gameObject.CompareTag("bubble"))
         {
-            //print("bubble found");
+            // Remove minimap icon
+       
+            // Update kill counter
+            if (hit == false)
+            {
+                killCounterScript.addKill();
+            }
+            
 
-            killCounterScript.addKill();
             StartCoroutine(Pause());
         }
-
     }
 
     IEnumerator Pause()
