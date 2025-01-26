@@ -19,25 +19,25 @@ public class cameraMovement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.A))
         {
-            transform.localEulerAngles += new Vector3(0.0f, -15.0f * Time.deltaTime, 0.0f);
+            transform.localEulerAngles += new Vector3(0.0f, -35.0f * Time.deltaTime, 0.0f);
 
         }
 
         if (Input.GetKey(KeyCode.D))
         {
-            transform.localEulerAngles += new Vector3(0.0f, 15.0f * Time.deltaTime, 0.0f);
+            transform.localEulerAngles += new Vector3(0.0f, 35.0f * Time.deltaTime, 0.0f);
 
         }
 
         if (Input.GetKey(KeyCode.W) && transform.localEulerAngles.z > 60)
         {
-            transform.Rotate(0.0f, 0.0f, -10.0f * Time.deltaTime);
+            transform.Rotate(0.0f, 0.0f, -25.0f * Time.deltaTime);
 
         }
 
         if (Input.GetKey(KeyCode.S) && transform.localEulerAngles.z < 90)
         {
-            transform.Rotate(0.0f, 0.0f, 10.0f * Time.deltaTime);
+            transform.Rotate(0.0f, 0.0f, 25.0f * Time.deltaTime);
 
         }
 

@@ -49,7 +49,7 @@ public class bubbleFire : MonoBehaviour
             //print(bubbles[i].transform.localScale.y / 2 + 0.1f);
             if (bubbles[i].transform.position.y <= bubbles[i].transform.localScale.y / 2 + 0.1f)
             {
-                print("pop");
+                //print("pop");
                 Destroy(bubbles[i]);
 
             }
