@@ -35,7 +35,7 @@ public class cameraMovement : MonoBehaviour
 
         }
 
-        if (Input.GetKey(KeyCode.S) && transform.localEulerAngles.z < 90)
+        if (Input.GetKey(KeyCode.S) && transform.localEulerAngles.z < 110)
         {
             transform.Rotate(0.0f, 0.0f, 25.0f * Time.deltaTime);
 
