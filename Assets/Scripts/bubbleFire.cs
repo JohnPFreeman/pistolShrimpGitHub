@@ -33,9 +33,8 @@ public class bubbleFire : MonoBehaviour
         if (!fired && Input.GetMouseButton(0))
         {
             fired = true;
-            // Change claw image
-            RightClawClosed.SetActive(true);
-            RightClawOpen.SetActive(false);
+            
+
             firedTime = Time.time;
             bubbles.Add(Instantiate(bubblePrefab, transform.position, transform.rotation));
 
@@ -43,13 +42,23 @@ public class bubbleFire : MonoBehaviour
             //print(bubblePrefab.transform.localScale.y / 2);
 
         }
+        if (Input.GetMouseButton(0))
+        {
+            // Change claw image
+            RightClawClosed.SetActive(true);
+            RightClawOpen.SetActive(false);
+        }
+        else
+        {
+            // Change claw image
+            RightClawClosed.SetActive(false);
+            RightClawOpen.SetActive(true);
+        }
+
 
         if (Time.time > firedTime + 0.5f)
         {
             fired = false;
-            // Change claw image
-            RightClawClosed.SetActive(false);
-            RightClawOpen.SetActive(true);
         }
 
         bubbles = bubbles.Where(bubble => bubble != null).ToList();
