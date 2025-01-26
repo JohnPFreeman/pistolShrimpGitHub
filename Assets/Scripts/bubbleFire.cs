@@ -11,6 +11,8 @@ public class bubbleFire : MonoBehaviour
     public bool fired;
     public float firedTime;
     public GameObject bubblePrefab;
+    public GameObject RightClawOpen;
+    public GameObject RightClawClosed;
     public List<GameObject> bubbles;
 
     [SerializeField] private AudioClip clawSnap;
@@ -22,6 +24,8 @@ public class bubbleFire : MonoBehaviour
     void Start()
     {
         fired = false;
+        RightClawClosed.SetActive(false);
+        RightClawOpen.SetActive(true);
 
         audioSource = GetComponent<AudioSource>();
 
@@ -36,6 +40,9 @@ public class bubbleFire : MonoBehaviour
         if (!fired && Input.GetMouseButton(0))
         {
             fired = true;
+            // Change claw image
+            RightClawClosed.SetActive(true);
+            RightClawOpen.SetActive(false);
             firedTime = Time.time;
             bubbles.Add(Instantiate(bubblePrefab, transform.position, transform.rotation));
             audioSource.pitch = UnityEngine.Random.Range(0.8f, 1.2f);
@@ -50,6 +57,9 @@ public class bubbleFire : MonoBehaviour
         if (Time.time > firedTime + 0.5f)
         {
             fired = false;
+            // Change claw image
+            RightClawClosed.SetActive(false);
+            RightClawOpen.SetActive(true);
         }
 
         bubbles = bubbles.Where(bubble => bubble != null).ToList();
