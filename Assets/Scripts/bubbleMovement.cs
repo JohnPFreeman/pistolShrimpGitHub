@@ -5,7 +5,7 @@ using UnityEngine;
 public class bubbleMovement : MonoBehaviour
 {
     Rigidbody bubble;
-
+    
     // Start is called before the first frame update
     void Start()
     {
