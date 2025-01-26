@@ -10,6 +10,7 @@ public class diverBehavior : MonoBehaviour
     public GameObject shrimp;
     public bool hit;
     Animator animator;
+    killCounter killCounterScript;
 
     [SerializeField] private AudioClip death1;
     [SerializeField] private AudioClip death2;
@@ -19,6 +20,7 @@ public class diverBehavior : MonoBehaviour
     void Start()
     {
         animator = GetComponentInChildren<Animator>();
+        killCounterScript = GameObject.Find("KCO").GetComponent<killCounter>();
         hit = false;
         audioSource = GetComponent<AudioSource>();
     }
@@ -28,8 +30,9 @@ public class diverBehavior : MonoBehaviour
         //print("object has entered");
         if (other.gameObject.CompareTag("bubble"))
         {
-            //print("bubble found");    
-            
+            //print("bubble found");
+
+            killCounterScript.addKill();
             StartCoroutine(Pause());
         }
 
