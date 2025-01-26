@@ -5,7 +5,6 @@ using UnityEngine.UIElements;
 
 public class diverBehavior : MonoBehaviour
 {
-    // Start is called before the first frame update
     public float speed = 1.5f;
     void Start()
     {
