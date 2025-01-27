@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 
 public class diverBehavior : MonoBehaviour
 {
-    public float speed = 1.5f;
+    public float speed = 2.25f;
     public GameObject shrimp;
     public bool hit;
     Animator animator;
@@ -55,17 +55,17 @@ public class diverBehavior : MonoBehaviour
         if (rand == 0)
         {
             //audioSource.clip = death1;
-            AudioSource.PlayClipAtPoint(death1, transform.position, 1f);
+            AudioSource.PlayClipAtPoint(death1, transform.position, 2f);
         }
         else if (rand == 1)
         {
             //audioSource.clip = death2;
-            AudioSource.PlayClipAtPoint(death2, transform.position, 1f);
+            AudioSource.PlayClipAtPoint(death2, transform.position, 2f);
         }
         else
         {
             //audioSource.clip = death3;
-            AudioSource.PlayClipAtPoint(death3, transform.position, 1f);
+            AudioSource.PlayClipAtPoint(death3, transform.position, 2f);
         }
 
         //audioSource.Play();
