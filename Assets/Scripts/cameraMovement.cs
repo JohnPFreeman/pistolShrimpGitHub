@@ -19,13 +19,13 @@ public class cameraMovement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.A))
         {
-            transform.localEulerAngles += new Vector3(0.0f, -35.0f * Time.deltaTime, 0.0f);
+            transform.localEulerAngles += new Vector3(0.0f, -50.0f * Time.deltaTime, 0.0f);
 
         }
 
         if (Input.GetKey(KeyCode.D))
         {
-            transform.localEulerAngles += new Vector3(0.0f, 35.0f * Time.deltaTime, 0.0f);
+            transform.localEulerAngles += new Vector3(0.0f, 50.0f * Time.deltaTime, 0.0f);
 
         }
 
